@@ -85,5 +85,34 @@ public class Basic_Arr{
 //--------------------------------------------------------------------------------------------------------------------------------------------
         //10 Program to rotate the elements of an array to the left or right by a given number of positions.
 //--------------------------------------------------------------------------------------------------------------------------------------------
+        int[] MixArr={9, 7, 2, 1, 0, 3, 4, 6, 8, 5}; 
+        System.out.print("Unsorted Array : ");
+        for (int i=0; i<MixArr.length; i++) {
+            System.out.print(MixArr[i] + " ");
+        }
+        System.out.println(" \n");
+
+        System.out.print("Would You Like To Sort This Array?(Answer In Either 'true' or 'false')  =  ");
+        boolean Choice=uip.nextBoolean();
+        if(Choice==true){
+            int n=MixArr.length;
+            for(int i=0; i<n-1; i++){
+                for (int j=0; j<n-i-1; j++){
+                    if (MixArr[j] > MixArr[j+1]){
+                        int temp2 = MixArr[j];
+                        MixArr[j] = MixArr[j+1];
+                        MixArr[j+1] = temp2;
+                    }
+                }
+            }
+
+            System.out.print("\nSorted Array : ");
+            for (int i=0; i<n; i++) {
+                System.out.print(MixArr[i] + " ");
+            }
+        }else{
+            System.out.print("\nFine Bye!! You Should've Chosen 'true'");
+        }
+        System.out.println("\n");
     }
 }
