@@ -130,8 +130,8 @@ public class Basic_Arr{
         //Q13 Program to find the union of two arrays.
 //-------------------------------------------------------------------------------------------------------------------------------------------- 
         //Q14 Program to merge two sorted arrays into a single sorted array.
-        int[] array1={0, 1, 2, 3, 4};
-        int[] array2={5, 6, 7, 8, 9};
+        int[] array1={1, 0, 4, 2, 3};
+        int[] array2={5, 7, 6, 9, 8};
         System.out.print("Array 1 : " + Arrays.toString(array1));
         System.out.print("\n\nArray 2 : " + Arrays.toString(array2));
 
@@ -153,8 +153,8 @@ public class Basic_Arr{
         while(j<array2.length){
             mergedArray[k++]=array2[j++];
         }
-
-        System.out.print("\n\nMerged And Sorted Array : " + Arrays.toString(mergedArray));
+        Arrays.sort(mergedArray);
+        System.out.print("\n\nThe Merged and Sortedd Array Will Be : " + Arrays.toString(mergedArray));
         System.out.println(" \n");
 //-------------------------------------------------------------------------------------------------------------------------------------------- 
         //Q15 Program to find the frequency of each element in an array.
@@ -169,7 +169,6 @@ public class Basic_Arr{
 //-------------------------------------------------------------------------------------------------------------------------------------------- 
         //Q20 Program to check if an array is symmetric (palindromic).
 //--------------------------------------------------------------------------------------------------------------------------------------------
-    //hello
     
 
     }
