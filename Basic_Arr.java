@@ -26,6 +26,21 @@ public class Basic_Arr{
         System.out.println(" \n");
 //--------------------------------------------------------------------------------------------------------------------------------------------
         //Q5 Program to find the maximum and minimum values in an array.
+        int[] Arr2={5, 2, 8, 4, 7, 6, 1, 0, 3, 9};
+
+        int Lar=Arr2[0], Sml=Arr2[0];
+
+        for(int num : Arr2){
+            if(num>Lar){
+                Lar=num;
+            }
+            if(num<Sml){
+                Sml=num;
+            }
+        }
+
+        System.out.print("The Largest Value : " + Lar + " and The Smallest Value : " + Sml);
+        System.out.println(" \n");
 //--------------------------------------------------------------------------------------------------------------------------------------------
         // Q6 Program to search for a specific element in an array.
         Scanner uip=new Scanner(System.in);
