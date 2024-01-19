@@ -44,8 +44,15 @@ public class Basic_Arr{
 //--------------------------------------------------------------------------------------------------------------------------------------------
         // Q6 Program to search for a specific element in an array.
         Scanner uip=new Scanner(System.in);
-        System.out.print("Search Element Here : ");
-        int Search_E=uip.nextInt(), index=-1;
+        int Search_E;
+        try{
+            System.out.print("Search Element Here : ");
+            Search_E=uip.nextInt();
+        }catch (InputMismatchException IME){
+            System.out.print("\nInvalid Input\n\n");
+            return;
+        }
+        int index=-1;
         for(int i=0; i<Arr.length; i++){
             if(Arr[i]==Search_E){
                 index=i;
@@ -61,9 +68,21 @@ public class Basic_Arr{
 //--------------------------------------------------------------------------------------------------------------------------------------------
         //Q7 Program to insert an element at a specified position in an array. 
         System.out.print("Enter The Element That You Want To Insert : ");
-        int Insert_E=uip.nextInt();
+        int Insert_E;
+        try{
+            Insert_E=uip.nextInt();
+        }catch(InputMismatchException IME){
+            System.out.print("\nInvalid Input\n\n");
+            return;
+        }
         System.out.print("\nEnter The Position That You Want To Insert It In(Max 10) : ");
-        int Pos=uip.nextInt();
+        int Pos;
+        try{
+            Pos=uip.nextInt();
+        }catch(InputMismatchException IME){
+            System.out.print("\nInvalid Input\n\n");
+            return;
+        }
 
         int[] newArr=new int[Arr.length+1];
         for (int i=0, j=0; i<newArr.length; i++) {
@@ -79,7 +98,13 @@ public class Basic_Arr{
 //--------------------------------------------------------------------------------------------------------------------------------------------
         //Q8 Program to delete an element from a specific position in an array.
         System.out.print("Enter The Position On Which You Want The Element To Be Deleted(Max 9) : ");
-        int Del_Pos=uip.nextInt();
+        int Del_Pos;
+        try{
+            Del_Pos=uip.nextInt();
+        }catch(InputMismatchException IME){
+            System.out.print("\nInvalid Input\n\n");
+            return;
+        }
         int[] newnewArr=new int[Arr.length-1];
         for (int i=0, j=0; i<newnewArr.length; i++, j++) {
             if (j==Del_Pos) {
