@@ -35,17 +35,17 @@ public class SearchArr {
         System.out.println("The String Is : " + Str);
         System.out.print("Enter The Character To Be Searched (Case Sensetive) : ");
         char Search_C;
-        int flagS=0, indexS=0;
-        try{
-            Search_C=uip.next().charAt(0);
-        }catch(NoSuchElementException NSEE){
+        int flagS = 0, indexS = 0;
+        try {
+            Search_C = uip.next().charAt(0);
+        } catch (NoSuchElementException NSEE) {
             System.out.println("Invalid Input No Such Element Exists In The Dictionary");
             return;
         }
-        for(int j=0; j<Str.length(); j++){
-            if(Str.charAt(j)==Search_C){
-                flagS=1;
-                indexS=j;
+        for (int j = 0; j < Str.length(); j++) {
+            if (Str.charAt(j) == Search_C) {
+                flagS = 1;
+                indexS = j;
                 break;
             }
         }
