@@ -1,44 +1,73 @@
 public class Linkedlist {
     Node head;
-    class Node{
+
+    class Node {
         int data;
         Node next;
-        Node(int d){
-            data=d;
-            next=null;
+
+        Node(int d) {
+            data = d;
+            next = null;
         }
     }
-    void Addfirst(int d){
+
+    void Addfirst(int d) {
         Node newnode = new Node(d);
-        if(head==null){
-            head=newnode;
+        if (head == null) {
+            head = newnode;
             return;
         }
-        newnode.next=head;
-        head=newnode;
+        newnode.next = head;
+        head = newnode;
     }
-    void printlist(){
-        if(head==null){
+
+    void Addlast(int d) {
+        Node newnode = new Node(d);
+        if (head == null) {
+            head = newnode;
+            return;
+        }
+        Node last = head;
+        while (last.next != null) {
+            last = last.next;
+        }
+        last.next = newnode;
+    }
+
+    void Delfirst() {
+        if (head == null) {
+            System.out.println("DelList is Empty dude!!");
+            return;
+        }
+        if (head.next == null) {
+            head = null;
+        }
+        head = head.next;
+    }
+
+    void printlist() {
+        if (head == null) {
             System.out.println("List is Empty dude!");
             return;
         }
-        Node last=head;
-        while(last!=null){
-            System.out.print(last.data+" ");
-            last=last.next;
+        Node last = head;
+        while (last != null) {
+            System.out.print(last.data + " ");
+            last = last.next;
         }
         System.out.println();
     }
 
     public static void main(String[] args) {
-        Linkedlist list= new Linkedlist();
+        Linkedlist list = new Linkedlist();
         list.printlist();
-        list.Addfirst(1);
-        list.Addfirst(2);
+        list.Addfirst(99);
+        list.Addlast(100);
+        list.Addlast(101);
         list.printlist();
-        list.Addfirst(3);
-        list.Addfirst(4);
-        list.Addfirst(5);
+        list.Addfirst(98);
+        list.printlist();
+        list.Delfirst();
         list.printlist();
     }
 }
