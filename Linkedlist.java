@@ -61,11 +61,11 @@ public class Linkedlist {
     public static void main(String[] args) {
         Linkedlist list = new Linkedlist();
         list.printlist();
-        list.Addfirst(99);
-        list.Addlast(100);
-        list.Addlast(101);
+        list.Addfirst(1);
+        list.Addlast(2);
+        list.Addlast(3);
         list.printlist();
-        list.Addfirst(98);
+        list.Addfirst(0);
         list.printlist();
         list.Delfirst();
         list.printlist();
