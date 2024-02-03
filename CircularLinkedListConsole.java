@@ -1,14 +1,22 @@
-public class CircularLinkedList {
+class CircularLinkedList {
     Node head;
 
     class Node {
         int data;
         Node next;
 
-        Node(int nodedata) {
-            data = nodedata;
-            next = null;
+        Node(int val, Node node) {
+            this.data = val;
+            this.next = node;
         }
+
+        Node(int val) {
+            this.data = val;
+            this.next = null;
+        }
+    }
+    CircularLinkedList(){
+        this.head=null;
     }
 
     void AddFirst(int nodedata) {
@@ -27,24 +35,22 @@ public class CircularLinkedList {
         Node last = head;
         while (last.next != head) {
             last = last.next;
-
         }
         newnode.next = head;
         last.next = newnode;
         head = newnode;
-
     }
 
     void AddLast(int nodedata) {
         Node newnode = new Node(nodedata);
         if (head == null) {
             head = newnode;
+            newnode.next=newnode;
             return;
         }
         if (head.next == head) {
             newnode.next = head;
             head.next = newnode;
-            head = newnode;
             return;
         }
         Node last = head;
@@ -54,7 +60,6 @@ public class CircularLinkedList {
 
         last.next = newnode;
         newnode.next = head;
-
     }
 
     void DelFirst() {
@@ -86,13 +91,13 @@ public class CircularLinkedList {
             return;
         }
         Node last = head;
-        Node prev = head;
+        Node previous = head;
         while (last.next != head) {
-            prev = last;
+            previous = last;
             last = last.next;
         }
 
-        prev.next = head;
+        previous.next = head;
     }
 
     void PrintList() {
@@ -109,6 +114,9 @@ public class CircularLinkedList {
         System.out.println();
     }
 
+}
+
+public class CircularLinkedListConsole {
     public static void main(String[] args) {
         CircularLinkedList list = new CircularLinkedList();
         list.AddFirst(1);
