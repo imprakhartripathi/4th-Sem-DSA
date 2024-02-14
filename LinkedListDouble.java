@@ -59,8 +59,7 @@ public class LinkedListDouble {
         while (last.next != null) {
             last = last.next;
         }
-        last = last.previous;
-        last.next = null;
+        last.previous.next = null;
     }
 
     void PrintList() {

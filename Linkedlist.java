@@ -44,6 +44,34 @@ public class Linkedlist {
         }
         head = head.next;
     }
+    void sort() {
+        if (head == null) {
+            System.out.println("list is empty");
+            return;
+        }
+        int c = 0;
+        Node last = head;
+        while (last != null) {
+            last = last.next;
+            c++;
+        }
+        System.out.println("No of nodes " + c);
+
+        int d;
+        for (int i = 0; i < c; i++) {
+            Node temp = head;
+            Node tempnext = temp.next;
+            for (int j = 0; j < c - i - 1; j++) {
+                if (temp.data > tempnext.data) {
+                    d = temp.data;
+                    temp.data = tempnext.data;
+                    tempnext.data = d;
+                }
+                temp = tempnext;
+                tempnext = tempnext.next;
+            }
+        }
+    }
 
     void printlist() {
         if (head == null) {
