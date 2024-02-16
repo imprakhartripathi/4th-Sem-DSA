@@ -40,17 +40,25 @@ public class Stack {
         System.out.println();
     }
 
-    void Rewrite(int changeelement, int newelement){
-        int flag=0;
-        for(int i=top;i>=0;i--){
-            if (changeelement==stack[i]){
-                stack[i]=newelement;
+    void peek() {
+        if (top == -1) {
+            System.out.println("Underflow Empty Stack");
+            return;
+        }
+        System.out.println("Peak Element of The Stack is " + stack[top]);
+    }
+
+    void Rewrite(int changeelement, int newelement) {
+        int flag = 0;
+        for (int i = top; i >= 0; i--) {
+            if (changeelement == stack[i]) {
+                stack[i] = newelement;
                 return;
-            }else{
-                flag=1;
+            } else {
+                flag = 1;
             }
         }
-        if(flag==1){
+        if (flag == 1) {
             System.out.println("Not Found");
             return;
         }
