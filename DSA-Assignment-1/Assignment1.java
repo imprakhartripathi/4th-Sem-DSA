@@ -1,7 +1,7 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-class Stack_CLL_StudentManagement {
+class Stack_DCLL_StudentManagement {
     Student head;
 
     class Student {
@@ -126,8 +126,8 @@ class Stack_CLL_StudentManagement {
 public class Assignment1 {
     public static void main(String[] args) {
         Scanner ip = new Scanner(System.in);
-        System.out.println("This Is Student Management System Using Stack With CLL");
-        Stack_CLL_StudentManagement sm = new Stack_CLL_StudentManagement();
+        System.out.println("This Is Student Management System Using Stack With DCLL");
+        Stack_DCLL_StudentManagement sm = new Stack_DCLL_StudentManagement();
         int choice;
         System.out.println("\nMenu:");
         System.out.println("1. Add a student to Stack");
