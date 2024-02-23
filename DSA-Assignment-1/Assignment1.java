@@ -156,7 +156,7 @@ public class Assignment1 {
                     System.out.println("Last student removed.");
                     break;
                 case 3:
-                    System.out.println("Students in the Stack:");
+                    System.out.println("Student(s) in the Stack:");
                     sm.PrintStack();
                     break;
                 case 4:

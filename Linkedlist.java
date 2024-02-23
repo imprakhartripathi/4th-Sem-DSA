@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Linkedlist {
     Node head;
 
@@ -44,6 +46,7 @@ public class Linkedlist {
         }
         head = head.next;
     }
+
     void sort() {
         if (head == null) {
             System.out.println("list is empty");
@@ -88,14 +91,30 @@ public class Linkedlist {
 
     public static void main(String[] args) {
         Linkedlist list = new Linkedlist();
-        list.printlist();
-        list.Addfirst(1);
-        list.Addlast(2);
-        list.Addlast(3);
-        list.printlist();
-        list.Addfirst(0);
-        list.printlist();
-        list.Delfirst();
-        list.printlist();
+        Scanner ip = new Scanner(System.in);
+        System.out.println("\nMenue:");
+        System.out.println("1. AddFirst\n2. Addlast\n3. Delete\n4. sort\n5. Print\n6. Exit");
+        int choice;
+        do {
+            System.out.print("Enter Your Choice : ");
+            choice = ip.nextInt();
+                switch (choice) {
+                    case 1:
+                    System.out.println("Enter the element : ");
+                        int a = ip.nextInt();
+                        list.Addfirst(a);
+                        break;
+                    case 2:
+                    System.out.println("Enter The Element : ");
+                        int b = ip.nextInt();
+                        list.Addlast(b);
+                        break;
+                    case 5:
+                        list.printlist();
+                        break;
+                    default:
+                        System.out.println("Wrong Input Enter Again ");
+                }
+        } while (choice != 6);
     }
 }
