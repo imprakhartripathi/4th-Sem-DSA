@@ -71,6 +71,24 @@ class CircularLinkedListDoubled {
         }
     }
 
+    void DeleteByData(int nodedata) {
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        Node last = head;
+        do {
+            if (last.data == nodedata) {
+                last.next.previous = last.previous;
+                last.previous.next = last.next;
+                return;
+            }
+            last = last.next;
+        } while (last != head);
+        System.out.println("Node with data " + nodedata + " not found");
+    }
+    
+
     void PrintList() {
         if (head == null) {
             System.out.println("List's empty bro what you tryna print");
@@ -101,6 +119,8 @@ public class CircularLinkedListDoubledConsole {
         list.PrintList();
         list.DeleteFirst();
         list.DeleteLast();
+        list.PrintList();
+        list.DeleteByData(3);
         list.PrintList();
     }
 }
