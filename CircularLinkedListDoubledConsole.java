@@ -87,7 +87,21 @@ class CircularLinkedListDoubled {
         } while (last != head);
         System.out.println("Node with data " + nodedata + " not found");
     }
-    
+
+    void CountNode() {
+        if (head == null) {
+            System.out.println("List's empty bro what you tryna count");
+            return;
+        }
+        Node last = head;
+        int count = 0;
+        while (last.next != head) {
+            count++;
+            last = last.next;
+        }
+        count++;
+        System.out.println("The Total Count of Nodes In This LinkedList is " + count);
+    }
 
     void PrintList() {
         if (head == null) {
@@ -114,13 +128,16 @@ public class CircularLinkedListDoubledConsole {
         list.AddFirst(2);
         list.AddFirst(1);
         list.PrintList();
+        list.CountNode();
         list.AddLast(6);
         list.AddFirst(0);
         list.PrintList();
+        list.CountNode();
         list.DeleteFirst();
         list.DeleteLast();
         list.PrintList();
-        list.DeleteByData(3);
-        list.PrintList();
+        list.CountNode();
+        //list.DeleteByData(3);
+        //list.PrintList();
     }
 }
