@@ -55,18 +55,18 @@ public class BinarySearch {
         return -1;
 
     }
-    
-    static void binarySearchManualWithDuplication(int[] temparr, int countelement) {
+
+    /*static void binarySearchManualWithDuplication(int[] temparr, int countelement) {
         int count = 0;
-        int occurance = -1;
+        int occurrence = -1;
         Arrays.sort(temparr);
         int lowerbound = 0, upperbound = temparr.length - 1, mid;
         while (lowerbound <= upperbound) {
-            mid = (lowerbound + upperbound) / 2;
+            mid = lowerbound + (upperbound - lowerbound) / 2;
             if (temparr[mid] == countelement) {
                 count++;
-                if (occurance == -1) {
-                    occurance = mid + 1;
+                if (occurrence == -1) {
+                    occurrence = mid;
                 }
                 upperbound = mid - 1;
             } else if (temparr[mid] > countelement) {
@@ -76,11 +76,34 @@ public class BinarySearch {
             }
         }
         if (count > 0) {
-            System.out.println("The Element " + countelement + " is Duplicated " + count + " times and the first selected "
-                    + countelement + " was at position " + occurance + " of the Sorted Array \n" + Arrays.toString(temparr) + "\nDone By Manual Binary Search With Duplication Count");
+            System.out.println(
+                    "The Element " + countelement + " is duplicated " + count + " times. The first occurrence of " +
+                            countelement + " is at position " + occurrence + " in the sorted array.\n"
+                            + Arrays.toString(temparr) +
+                            "\nDone by manual binary search with duplication count.");
         } else {
-            System.out.println("Element Not Found");
+            System.out.println("Element not found.");
         }
+    }*/
+
+    static void duplicationCount(int[] temparr, int countelement) {
+        Arrays.sort(temparr);
+        int counter=0;
+        for (int i = 0; i < temparr.length; i++) {
+            if (temparr[i]==countelement){
+                counter++;
+            }
+        }
+        int[] indexes = new int[counter];
+        int iterator=0;
+        for (int i = 0; i < temparr.length; i++) {
+            if (temparr[i]==countelement && iterator<=counter){
+                indexes[iterator]=i+1;
+                iterator++;
+            }
+        }
+        System.out.println("The Element " + countelement + " is Duplicted " + counter + " Times and is on the respective positions : ");
+        System.out.println(Arrays.toString(indexes));
     }
 
     public static void main(String[] args) {
@@ -90,11 +113,9 @@ public class BinarySearch {
         System.out.print("Enter Element to Search : ");
         int searchelement = ip.nextInt();
 
-
         binarySearchManual(arr, searchelement);
 
         binarySearchPredefined(arr, searchelement);
-
 
         int indexvariable = binarySearchRecursion(arr, 0, arr.length, searchelement);
         if (indexvariable >= 0) {
@@ -105,11 +126,10 @@ public class BinarySearch {
             System.out.println("Element Not Found");
         }
 
-        
-        int[] DuplicateArr = {1, 11, 2, 4, 2, 4, 6, 7, 8, 9, 1, 8, 4, 9, 0, 11, 12, 4, 33, 3, 0};
+        int[] DuplicateArr = { 1, 11, 2, 4, 2, 4, 6, 7, 8, 9, 1, 8, 4, 9, 0, 11, 12, 4, 33, 3, 0 };
         System.out.println("The Predefined Array with Duplicates is " + Arrays.toString(DuplicateArr));
         System.out.print("Enter the Element To Check Its Duplication : ");
         int countelementinput = ip.nextInt();
-        binarySearchManualWithDuplication(DuplicateArr, countelementinput);
+        duplicationCount(DuplicateArr, countelementinput);
     }
 }
