@@ -56,7 +56,7 @@ public class BinarySearch {
 
     }
 
-    /*static void binarySearchManualWithDuplication(int[] temparr, int countelement) {
+    static void binarySearchManualWithDuplication(int[] temparr, int countelement) {
         int count = 0;
         int occurrence = -1;
         Arrays.sort(temparr);
@@ -84,7 +84,7 @@ public class BinarySearch {
         } else {
             System.out.println("Element not found.");
         }
-    }*/
+    }
 
     static void duplicationCount(int[] temparr, int countelement) {
         Arrays.sort(temparr);
@@ -131,5 +131,6 @@ public class BinarySearch {
         System.out.print("Enter the Element To Check Its Duplication : ");
         int countelementinput = ip.nextInt();
         duplicationCount(DuplicateArr, countelementinput);
+        binarySearchManualWithDuplication(DuplicateArr, countelementinput);
     }
 }
