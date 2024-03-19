@@ -131,6 +131,7 @@ public class BinarySearch {
         System.out.print("Enter the Element To Check Its Duplication : ");
         int countelementinput = ip.nextInt();
         duplicationCount(DuplicateArr, countelementinput);
+        
         binarySearchManualWithDuplication(DuplicateArr, countelementinput);
     }
 }
